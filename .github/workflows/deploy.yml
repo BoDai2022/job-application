@@ -31,7 +31,7 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        source: ".next/,public/,package.json,package-lock.json,next.config.js"
+        source: ".next/,public/,package.json,package-lock.json,next.config.js,.env"
         target: "/home/ec2-user/nextjs"
 
     - name: Install Dependencies and Restart Server
@@ -42,6 +42,6 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-          cd /home/ec2-user/nextjs/job-application
+          cd /home/ec2-user/nextjs
           npm install --production
           pm2 restart all # Assumes PM2 is used for process management
