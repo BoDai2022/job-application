@@ -105,7 +105,7 @@ export default function Form({ factors, job_application }: { factors: Factor[], 
                 >
                     Cancel
                 </Link> */}
-                <Button type="submit">Create Feedback</Button>
+                <Button type="submit">Create</Button>
             </div>
         </form>
     );
