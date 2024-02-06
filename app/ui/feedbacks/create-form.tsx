@@ -15,9 +15,8 @@ import { State } from '@/app/lib/actions';
 
 export default function Form({ factors, job_application }: { factors: Factor[], job_application: any }) {
     // console.log(factors)
-    const initialState: State = { message: "null", errors: {} };
+    const initialState: State= { message: "null", errors: {} };
     const [state, dispatch] = useFormState(createFeedback, initialState);
-
     return (
         <form action={dispatch}>
             <div className="rounded-md bg-gray-50 p-4 md:p-6">
@@ -81,17 +80,17 @@ export default function Form({ factors, job_application }: { factors: Factor[], 
                 </fieldset>
                 {/* feedback detail */}
                 <div className="mb-4">
-                    <label htmlFor="detail" className="mb-2 block text-sm font-medium">
+                    <label htmlFor="detailed_feedback" className="mb-2 block text-sm font-medium">
                         Any other thoughts or observations are appreciated
                     </label>
                     <div className="relative mt-2 rounded-md">
                         <div className="relative">
                             <textarea
-                                id="detail"
-                                name="detail"
+                                id="detailed_feedback"
+                                name="detailed_feedback"
                                 placeholder="Any thoughts or advices are appreciated..."
                                 className="peer block w-full pl-12 rounded-md border border-gray-300 py-2 px-3 text-sm text-gray-700 placeholder:text-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                                aria-describedby="detail-error"
+                                aria-describedby="detailed_feedback-error"
                                 rows={4}>
                             </textarea>
                             <PencilSquareIcon className="pointer-events-none absolute left-3 top-1/4 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />

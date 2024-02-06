@@ -17,7 +17,7 @@ export type State = {
     errors?: {
         job_application?: string[];
         factors?: string[];
-        detail?: string[];
+        detailed_feedback?: string[];
     };
     message?: string | null;
 }
@@ -25,7 +25,7 @@ export async function createFeedback(prevState: State, formData: FormData) {
     const validatedFields = CreateFeedback.safeParse({
         job_application: formData.get("job_application"),
         factors: formData.getAll('factors'),
-        detailed_feedback: formData.get('detail'),
+        detailed_feedback: formData.get('detailed_feedback'),
     })
     if (!validatedFields.success) {
         console.log(validatedFields.error.flatten().fieldErrors)
