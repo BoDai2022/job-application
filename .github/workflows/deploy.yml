@@ -24,7 +24,7 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Deploy to Server
+    - name: Deploy to Server  
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.EC2_HOST }}
